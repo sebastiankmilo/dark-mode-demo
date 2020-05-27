@@ -1,0 +1,140 @@
+/*global*/
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #1d2029;
+}
+:root {
+  --lime-Green: hsl(163, 72%, 41%);
+  --bright-Red: hsl(356, 69%, 56%);
+
+  --facebook: #168ef4;
+  --twitter: hsl(203, 89%, 53%);
+  --instagram-1: hsl(37, 97%, 70%);
+  --instagram-2: hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+  --gray: #5f616d;
+}
+
+.wrapper {
+  padding: 0 30px;
+}
+
+.grid {
+  /*voy a ubicar los objetos mediante filas y columnas*/
+  display: grid;
+  /*les agrego un espaciado vertical*/
+  grid-row-gap: 25px;
+}
+
+/*debug*/
+.border {
+  border: 1px solid red;
+}
+
+/*header */
+.header {
+  background: #f8f9fe;
+  padding-bottom: 50px;
+  margin-bottom: -20px;
+  border-radius: 0 0 8px 8px;
+}
+.header h1 {
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+}
+.header-total {
+  color: var(--gray);
+  margin: 0.5em 0;
+  font-weight: 500;
+  border-bottom: 2px solid var(--gray);
+  padding-bottom: 1.5em;
+  font-size: 0.95em;
+}
+
+/*card*/
+.card {
+  /*agrego una curva a  los bordes*/
+  border-radius: 5px;
+  /*oculto que el recuadro superior no se salga de los limites */
+  overflow: hidden;
+  /*agrego un color de fondo*/
+  background-color: #f0f3fa;
+  text-align: center;
+
+  padding: 1.7em 0;
+  position: relative;
+}
+.card-title {
+  /*para poner alinear los item de forma más facil*/
+  display: flex;
+  /*alinear los item de forma vertical*/
+  align-items: center;
+  /*alinear los item de forma horizontal*/
+  justify-content: center;
+  /*cambio el color de la fuente*/
+  color: var(--gray);
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.card-title img {
+  margin-right: 5px;
+}
+
+.card::before {
+  /*:: before => accedo a el primer elemento que tenga la clase card*/
+  content: "";
+  height: 4px;
+  display: block;
+  /*el objeto se va a ubicar con relación a el primer objeto superior que sea de posición relativa*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.card.facebook::before {
+  background: var(--facebook);
+}
+.card.instagram::before {
+  background-image: linear-gradient(
+    to right,
+    var(--instagram-1) 0%,
+    var(--instagram-2) 100%
+  );
+}
+.card.twitter::before {
+  background: var(--twitter);
+}
+
+.card-followers {
+}
+
+.card-followers-number {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.card-followers-title {
+  /*ubicar el texto abajo del numero de seguidores*/
+  display: block;
+  color: var(--gray);
+
+  letter-spacing: 5px;
+  font-size: 0.75em;
+  margin-top: 10px;
+}
+
+.card-today {
+  color: var(--lime-Green);
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-today img {
+  margin-right: 5px;
+}
