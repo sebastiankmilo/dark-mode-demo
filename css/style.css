@@ -1,9 +1,4 @@
 /*global*/
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  color: #1d2029;
-}
 :root {
   --lime-Green: hsl(163, 72%, 41%);
   --bright-Red: hsl(356, 69%, 56%);
@@ -13,7 +8,18 @@ body {
   --instagram-1: hsl(37, 97%, 70%);
   --instagram-2: hsl(329, 70%, 58%);
   --youTube: hsl(348, 97%, 39%);
-  --gray: #5f616d;
+  --text2: #5f616d;
+  --card-backgroud: #f0f3fa;
+  --background-header: #f8f9fe;
+  --background: hsl(0, 0%, 100%);
+  --base: #1d2029;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--base);
+  background: var(--background);
 }
 
 .wrapper {
@@ -37,20 +43,23 @@ body {
 
 /*header */
 .header {
-  background: #f8f9fe;
+  background: var(--background-header);
+  padding-top: 10px;
   padding-bottom: 50px;
   margin-bottom: -20px;
+  margin-top: 0;
   border-radius: 0 0 8px 8px;
 }
 .header h1 {
   font-size: 1.5em;
   margin-bottom: 0.2em;
+  margin-top: 0;
 }
 .header-total {
-  color: var(--gray);
+  color: var(--text2);
   margin: 0.5em 0;
   font-weight: 500;
-  border-bottom: 2px solid var(--gray);
+  border-bottom: 2px solid var(--text2);
   padding-bottom: 1.5em;
   font-size: 0.95em;
 }
@@ -62,7 +71,7 @@ body {
   /*oculto que el recuadro superior no se salga de los limites */
   overflow: hidden;
   /*agrego un color de fondo*/
-  background-color: #f0f3fa;
+  background-color: var(--card-backgroud);
   text-align: center;
 
   padding: 1.7em 0;
@@ -76,7 +85,7 @@ body {
   /*alinear los item de forma horizontal*/
   justify-content: center;
   /*cambio el color de la fuente*/
-  color: var(--gray);
+  color: var(--text2);
   font-size: 0.9em;
   font-weight: bold;
 }
@@ -122,7 +131,7 @@ body {
 .card-followers-title {
   /*ubicar el texto abajo del numero de seguidores*/
   display: block;
-  color: var(--gray);
+  color: var(--text2);
 
   letter-spacing: 5px;
   font-size: 0.75em;
@@ -144,15 +153,19 @@ body {
 
 /*  overviews card  */
 .overviews {
-  margin-bottom: 1000px;
+  padding-bottom: 2em;
   margin-top: 1em;
+}
+.overviews h2 {
+  color: var(--text2);
+  font-size: 1.1em;
 }
 
 .card-small {
   display: grid;
   grid-row-gap: 1.8em;
   grid-template-columns: 1fr 1fr;
-  background: #f0f3fa;
+  background: var(--card-backgroud);
   border-radius: 8px;
   overflow: hidden;
   padding: 1.8em;
@@ -162,7 +175,7 @@ body {
   margin: 0;
 }
 .card-small-views {
-  color: var(--gray);
+  color: var(--text2);
   font-weight: 600;
   font-size: 0.9em;
 }
@@ -199,4 +212,37 @@ body {
 }
 .card-small-percent span img {
   margin-right: 5px;
+}
+
+/*vamos a cambiar los estilos para cuando sean desktop*/
+@media screen and (min-width: 480px) {
+  .wrapper {
+    max-width: 620px; /*configuro el ancho maximo*/
+    margin: auto; /*centro lo que contiene el wrapper*/
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+}
+@media screen and (min-width: 840px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+  .wrapper {
+    max-width: 1280px; /*configuro el ancho maximo*/
+    margin: auto; /*centro lo que contiene el wrapper*/
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+  .wrapper {
+    max-width: 1280px; /*configuro el ancho maximo*/
+    margin: auto; /*centro lo que contiene el wrapper*/
+  }
 }
