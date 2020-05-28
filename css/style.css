@@ -31,6 +31,9 @@ body {
 .border {
   border: 1px solid red;
 }
+.invisible {
+  display: none;
+}
 
 /*header */
 .header {
@@ -136,5 +139,64 @@ body {
   justify-content: center;
 }
 .card-today img {
+  margin-right: 5px;
+}
+
+/*  overviews card  */
+.overviews {
+  margin-bottom: 1000px;
+  margin-top: 1em;
+}
+
+.card-small {
+  display: grid;
+  grid-row-gap: 1.8em;
+  grid-template-columns: 1fr 1fr;
+  background: #f0f3fa;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1.8em;
+}
+.card-small p {
+  /*elimino los margenes de los elementos p que son los que hacian que se enlocara los grid*/
+  margin: 0;
+}
+.card-small-views {
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.card-small-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.card-small-number {
+  font-weight: bold;
+  font-size: 1.95em;
+  line-height: 0.8;
+}
+.card-small-percent {
+  display: flex;
+  color: var(--bright-Red);
+  /*align es vertical*/
+  align-items: flex-end;
+  /*justify es horizontal*/
+  justify-content: flex-end;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.card-small-percent.is-ok {
+  color: var(--lime-Green);
+}
+.card-small-percent.is-danger {
+  color: var(--bright-Red);
+}
+.card-small-percent span {
+  display: flex;
+  align-items: center;
+}
+.card-small-percent span img {
   margin-right: 5px;
 }
