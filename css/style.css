@@ -246,3 +246,13 @@ body {
     margin: auto; /*centro lo que contiene el wrapper*/
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-backgroud: hsl(228, 28%, 20%);
+    --background-header: hsl(232, 19%, 15%);
+    --background: hsl(230, 17%, 14%);
+    --base: hsl(0, 0%, 100%);
+    --text2: hsl(228, 34%, 66%);
+  }
+}
