@@ -79,7 +79,7 @@ body {
 /*modifico el estilo de un elemento hermano, si el elemnto
 que tiene la clase checkbox cambia de estado*/
 .checkbox:checked ~ .switch::before {
-  transform: translateX(40px);
+  transform: translateX(0px);
 }
 .checkbox {
   display: none;
@@ -109,7 +109,7 @@ que tiene la clase checkbox cambia de estado*/
   height: 30px;
   border-radius: 50%;
   background: var(--background);
-  transform: translateX(0px);
+  transform: translateX(40px);
   /**/
   transition: 0.3s;
   will-change: transform;
@@ -311,4 +311,22 @@ que tiene la clase checkbox cambia de estado*/
     --toggle1: hsl(210, 78%, 56%);
     --toggle2: hsl(146, 68%, 55%);
   }
+}
+.is-dark-mode {
+  --card-backgroud: hsl(228, 28%, 20%);
+  --background-header: hsl(232, 19%, 15%);
+  --background: hsl(230, 17%, 14%);
+  --base: hsl(0, 0%, 100%);
+  --text2: hsl(228, 34%, 66%);
+  --toggle1: hsl(210, 78%, 56%);
+  --toggle2: hsl(146, 68%, 55%);
+}
+.is-light-mode {
+  --card-backgroud: #f0f3fa;
+  --background-header: #f8f9fe;
+  --background: hsl(0, 0%, 100%);
+  --base: #1d2029;
+  --text2: #5f616d;
+  --toggle1: hsl(230, 22%, 74%);
+  --toggle2: hsl(230, 22%, 74%);
 }
