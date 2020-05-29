@@ -13,6 +13,8 @@
   --background-header: #f8f9fe;
   --background: hsl(0, 0%, 100%);
   --base: #1d2029;
+  --toggle1: hsl(230, 22%, 74%);
+  --toggle2: hsl(230, 22%, 74%);
 }
 
 body {
@@ -63,6 +65,58 @@ body {
   padding-bottom: 1.5em;
   font-size: 0.95em;
 }
+
+/*dark mode*/
+
+.dark-mode {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/*switch del dark mode*/
+
+/*modifico el estilo de un elemento hermano, si el elemnto
+que tiene la clase checkbox cambia de estado*/
+.checkbox:checked ~ .switch::before {
+  transform: translateX(40px);
+}
+.checkbox {
+  display: none;
+}
+.switch {
+  display: block;
+  height: 40px;
+  width: 80px;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    to right,
+    var(--toggle1) 0%,
+    var(--toggle2) 100%
+  );
+  padding: 5px;
+  box-sizing: border-box;
+  /*salir la manito cuando el ,o cursor esta por encima del switch*/
+  cursor: pointer;
+  /*no se check el checkbox*/
+  user-select: none;
+}
+/* creo la bolita dentro del switch */
+.switch::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--background);
+  transform: translateX(0px);
+  /**/
+  transition: 0.3s;
+  will-change: transform;
+}
+/*fin del switched del dark mode*/
+
+/* fin del dark mode*/
 
 /*card*/
 .card {
@@ -254,5 +308,7 @@ body {
     --background: hsl(230, 17%, 14%);
     --base: hsl(0, 0%, 100%);
     --text2: hsl(228, 34%, 66%);
+    --toggle1: hsl(210, 78%, 56%);
+    --toggle2: hsl(146, 68%, 55%);
   }
 }
